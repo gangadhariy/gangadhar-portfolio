@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gangadhar I Yaleholi — DevOps Engineer & Music Composer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CANVAS BACKGROUND -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursor-trail"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">GIY</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#music">Music</a></li>
+    <li><a href="#contact" class="nav-cta">Connect</a></li>
+  </ul>
+  <div class="nav-menu" id="nav-menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="#about" class="mob-link">About</a></li>
+    <li><a href="#skills" class="mob-link">Skills</a></li>
+    <li><a href="#experience" class="mob-link">Experience</a></li>
+    <li><a href="#music" class="mob-link">Music</a></li>
+    <li><a href="#contact" class="mob-link">Connect</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-text">DEVOPS</div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="tag-dot"></span>
+      Available for Projects
+    </div>
+
+    <h1 class="hero-name">
+      <span class="name-line" data-text="Gangadhar">Gangadhar</span>
+      <span class="name-line accent" data-text="I Yaleholi">I Yaleholi</span>
+    </h1>
+
+    <div class="hero-roles">
+      <span class="role-text" id="role-typewriter"></span>
+      <span class="cursor-blink">|</span>
+    </div>
+
+    <p class="hero-desc">
+      Building resilient cloud infrastructure and crafting cinematic soundscapes.
+      Where precision engineering meets creative expression.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#experience" class="btn btn-primary">
+        <span>View My Work</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Years DevOps</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="40">0</span><span class="stat-plus">%</span>
+        <span class="stat-label">Deploy Efficiency ↑</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Tech Stacks</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="orbit-ring ring-1">
+      <div class="orbit-icon" style="--angle:0deg"><img src="assets/aws.png" alt="AWS"></div>
+    </div>
+    <div class="orbit-ring ring-2">
+      <div class="orbit-icon" style="--angle:0deg"><img src="assets/kubernetes.png" alt="K8s"></div>
+      <div class="orbit-icon" style="--angle:180deg"><img src="assets/docker.png" alt="Docker"></div>
+    </div>
+    <div class="orbit-ring ring-3">
+      <div class="orbit-icon" style="--angle:0deg"><img src="assets/terraform.png" alt="Terraform"></div>
+      <div class="orbit-icon" style="--angle:120deg"><img src="assets/jenkins.png" alt="Jenkins"></div>
+      <div class="orbit-icon" style="--angle:240deg"><img src="assets/github.png" alt="GitHub"></div>
+    </div>
+    <div class="orbit-center">
+      <div class="center-pulse"></div>
+      <span>GIY</span>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">01 — About</span>
+      <h2 class="section-title">Who I Am</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lead">
+          DevOps Engineer crafting resilient infrastructure pipelines that power
+          production-grade applications at scale.
+        </p>
+        <p>
+          With 3 years of hands-on experience across AWS, Kubernetes, Terraform, and GitOps
+          workflows, I specialize in automating everything from container orchestration to
+          multi-cloud deployments. I transform complex infrastructure challenges into elegant,
+          repeatable solutions.
+        </p>
+        <p>
+          Beyond the terminal, I produce cinematic and electronic music under the name
+          <strong>Gangadhar I Eleholi</strong> — blending sonic architecture with technical precision.
+        </p>
+        <div class="about-links">
+          <a href="https://github.com/gangadhariy" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/gangadhar-i-yaleholi-044066245/" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://youtube.com/@jatayuempire" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube
+          </a>
+        </div>
+      </div>
+
+      <div class="about-card-stack">
+        <div class="about-card card-back"></div>
+        <div class="about-card card-mid"></div>
+        <div class="about-card card-front">
+          <div class="card-icon">⚙️</div>
+          <h3>Infrastructure Architect</h3>
+          <p>Kubernetes · AWS · Terraform · GitOps · CI/CD</p>
+          <div class="card-badge">3 Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-dark" id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">02 — Skills</span>
+      <h2 class="section-title">Tech Arsenal</h2>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card" data-tilt>
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="assets/aws.png" alt="AWS" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>☁️</span>'">
+        </div>
+        <h3>AWS</h3>
+        <p>EC2, EKS, S3, CloudWatch, IAM, VPC</p>
+        <div class="skill-level">
+          <div class="skill-bar" data-width="92"></div>
+        </div>
+        <span class="skill-pct">Expert</span>
+      </div>
+
+      <div class="skill-card" data-tilt>
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="assets/kubernetes.png" alt="Kubernetes" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>⎈</span>'">
+        </div>
+        <h3>Kubernetes</h3>
+        <p>EKS, CAPI, Argo CD, Helm, Pod Scaling</p>
+        <div class="skill-level">
+          <div class="skill-bar" data-width="88"></div>
+        </div>
+        <span class="skill-pct">Advanced</span>
+      </div>
+
+      <div class="skill-card" data-tilt>
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="assets/terraform.png" alt="Terraform" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>🏗️</span>'">
+        </div>
+        <h3>Terraform</h3>
+        <p>IaC, Modules, State Management, Workspaces</p>
+        <div class="skill-level">
+          <div class="skill-bar" data-width="85"></div>
+        </div>
+        <span class="skill-pct">Advanced</span>
+      </div>
+
+      <div class="skill-card" data-tilt>
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="assets/docker.png" alt="Docker" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>🐳</span>'">
+        </div>
+        <h3>Docker</h3>
+        <p>Containerization, Compose, Multi-stage Builds</p>
+        <div class="skill-level">
+          <div class="skill-bar" data-width="90"></div>
+        </div>
+        <span class="skill-pct">Expert</span>
+      </div>
+
+      <div class="skill-card" data-tilt>
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="assets/jenkins.png" alt="Jenkins" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>🔧</span>'">
+        </div>
+        <h3>Jenkins CI/CD</h3>
+        <p>Pipelines, GitHub Actions, Automation</p>
+        <div class="skill-level">
+          <div class="skill-bar" data-width="87"></div>
+        </div>
+        <span class="skill-pct">Advanced</span>
+      </div>
+
+      <div class="skill-card" data-tilt>
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="assets/github.png" alt="GitHub" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>🔀</span>'">
+        </div>
+        <h3>GitOps</h3>
+        <p>GitHub, Argo CD, Branch Strategies, PR Workflows</p>
+        <div class="skill-level">
+          <div class="skill-bar" data-width="89"></div>
+        </div>
+        <span class="skill-pct">Expert</span>
+      </div>
+
+    </div>
+
+    <!-- Additional tech badges -->
+    <div class="tech-badges">
+      <span class="badge">Ansible</span>
+      <span class="badge">OpenShift</span>
+      <span class="badge">Linux</span>
+      <span class="badge">Bash / Shell</span>
+      <span class="badge">Python</span>
+      <span class="badge">Prometheus</span>
+      <span class="badge">Grafana</span>
+      <span class="badge">Nginx</span>
+      <span class="badge">Redis</span>
+      <span class="badge">PostgreSQL</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">03 — Experience</span>
+      <h2 class="section-title">My Journey</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item" id="exp-1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2022 — Present</div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <h3>DevOps Engineer</h3>
+              <span class="exp-company">SAN Data Systems</span>
+            </div>
+            <div class="exp-badge">Full-Time</div>
+          </div>
+          <div class="exp-achievements">
+            <div class="achievement">
+              <div class="ach-icon">🚀</div>
+              <div>
+                <strong>CI/CD Pipelines</strong>
+                <p>Built end-to-end pipelines using Jenkins & GitHub Actions, reducing deployment time by 40%</p>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">⎈</div>
+              <div>
+                <strong>GitOps with Argo CD</strong>
+                <p>Implemented declarative GitOps workflows on EKS clusters, ensuring zero-drift deployments</p>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">☸️</div>
+              <div>
+                <strong>Kubernetes at Scale</strong>
+                <p>Managed production Kubernetes clusters using Cluster API (CAPI) across multiple environments</p>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🏗️</div>
+              <div>
+                <strong>Infrastructure as Code</strong>
+                <p>Automated entire AWS infrastructure provisioning using Terraform & Ansible playbooks</p>
+              </div>
+            </div>
+          </div>
+          <div class="exp-tags">
+            <span>AWS EKS</span><span>Jenkins</span><span>Argo CD</span>
+            <span>Terraform</span><span>CAPI</span><span>GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="exp-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2021 — 2022</div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <h3>AWS & DevOps Intern</h3>
+              <span class="exp-company">Intelipath Software</span>
+            </div>
+            <div class="exp-badge intern">Internship</div>
+          </div>
+          <div class="exp-achievements">
+            <div class="achievement">
+              <div class="ach-icon">🔴</div>
+              <div>
+                <strong>OpenShift Architecture</strong>
+                <p>Deployed scalable 3-tier application architecture on OpenShift platform</p>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">☁️</div>
+              <div>
+                <strong>Multi-Cloud K8s</strong>
+                <p>Managed Kubernetes clusters across multiple cloud providers for redundancy</p>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">📊</div>
+              <div>
+                <strong>Monitoring & Alerts</strong>
+                <p>Configured CloudWatch dashboards, custom metrics and alerting for production workloads</p>
+              </div>
+            </div>
+          </div>
+          <div class="exp-tags">
+            <span>OpenShift</span><span>Kubernetes</span><span>CloudWatch</span>
+            <span>Jenkins</span><span>Docker</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="section section-music" id="music">
+  <div class="music-bg-orb orb-1"></div>
+  <div class="music-bg-orb orb-2"></div>
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">04 — Music</span>
+      <h2 class="section-title">Sound Architecture</h2>
+    </div>
+
+    <div class="music-layout">
+      <div class="music-info">
+        <div class="music-artist-name">
+          <span class="artist-label">Artist Name</span>
+          <h3>Gangadhar I Eleholi</h3>
+        </div>
+        <p>
+          I compose cinematic, electronic, and experimental music using Ableton Live —
+          applying the same systematic thinking from infrastructure engineering to sonic design.
+          Every track is a pipeline, every sound a carefully orchestrated component.
+        </p>
+        <div class="music-genre-tags">
+          <span>🎬 Cinematic</span>
+          <span>🎛️ Electronic</span>
+          <span>🌊 Experimental</span>
+          <span>🎹 Ableton Live</span>
+        </div>
+        <div class="music-links">
+          <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="music-btn spotify">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Listen on Spotify
+          </a>
+          <a href="https://youtube.com/@jatayuempire" target="_blank" class="music-btn youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Watch on YouTube
+          </a>
+        </div>
+        <p class="music-search-tip">
+          🔍 Search <strong>"Gangadhar I Eleholi"</strong> on Google, Spotify, or any music platform
+        </p>
+      </div>
+
+      <div class="music-visual">
+        <div class="equalizer">
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+        </div>
+        <div class="vinyl">
+          <div class="vinyl-inner">
+            <div class="vinyl-center">🎵</div>
+          </div>
+        </div>
+        <div class="waveform">
+          <svg viewBox="0 0 300 60" preserveAspectRatio="none">
+            <polyline points="0,30 10,15 20,40 30,10 40,45 50,20 60,35 70,5 80,50 90,25 100,38 110,12 120,42 130,18 140,30 150,8 160,48 170,22 180,35 190,15 200,45 210,28 220,12 230,40 240,20 250,38 260,10 270,45 280,25 290,35 300,30"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-tag">05 — Contact</span>
+      <h2 class="section-title">Let's Connect</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p>
+          Open to DevOps engineering opportunities, cloud consulting projects,
+          and music collaborations. Let's build something extraordinary together.
+        </p>
+      </div>
+      <div class="contact-cards">
+        <a href="https://github.com/gangadhariy" target="_blank" class="contact-card">
+          <div class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div>
+            <h4>GitHub</h4>
+            <span>@gangadhariy</span>
+          </div>
+          <div class="cc-arrow">→</div>
+        </a>
+        <a href="https://www.linkedin.com/in/gangadhar-i-yaleholi-044066245/" target="_blank" class="contact-card">
+          <div class="cc-icon linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div>
+            <h4>LinkedIn</h4>
+            <span>Connect Professionally</span>
+          </div>
+          <div class="cc-arrow">→</div>
+        </a>
+        <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="contact-card">
+          <div class="cc-icon spotify">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </div>
+          <div>
+            <h4>Spotify</h4>
+            <span>Gangadhar I Eleholi</span>
+          </div>
+          <div class="cc-arrow">→</div>
+        </a>
+        <a href="https://youtube.com/@jatayuempire" target="_blank" class="contact-card">
+          <div class="cc-icon youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div>
+            <h4>YouTube</h4>
+            <span>@jatayuempire</span>
+          </div>
+          <div class="cc-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">GIY</div>
+    <p>© 2026 Gangadhar I Yaleholi — DevOps Engineer & Music Composer</p>
+    <p class="footer-sub">Built with precision. Deployed with purpose.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
