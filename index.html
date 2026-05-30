@@ -11,10 +11,7 @@
 </head>
 <body>
 
-<!-- CANVAS BACKGROUND -->
 <canvas id="bg-canvas"></canvas>
-
-<!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-trail" id="cursor-trail"></div>
 
@@ -27,6 +24,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#music">Music</a></li>
+    <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact" class="nav-cta">Connect</a></li>
   </ul>
   <div class="nav-menu" id="nav-menu">
@@ -34,7 +32,6 @@
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
   <ul>
     <li><a href="#about" class="mob-link">About</a></li>
@@ -42,6 +39,7 @@
     <li><a href="#experience" class="mob-link">Experience</a></li>
     <li><a href="#projects" class="mob-link">Projects</a></li>
     <li><a href="#music" class="mob-link">Music</a></li>
+    <li><a href="#certifications" class="mob-link">Certs</a></li>
     <li><a href="#contact" class="mob-link">Connect</a></li>
   </ul>
 </div>
@@ -81,18 +79,18 @@
 
     <div class="hero-stats">
       <div class="stat">
-        <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Years DevOps</span>
+        <div class="stat-top"><span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">Years Experience</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-num" data-target="40">0</span><span class="stat-plus">%</span>
-        <span class="stat-label">Deploy Efficiency ↑</span>
+        <div class="stat-top"><span class="stat-num" data-target="12">0</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">AWS Services</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-num" data-target="3">0</span><span class="stat-plus"></span>
-        <span class="stat-label">Key Projects</span>
+        <div class="stat-top"><span class="stat-num" data-target="2">0</span></div>
+        <span class="stat-label">Certifications</span>
       </div>
     </div>
   </div>
@@ -151,6 +149,14 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
+          <a href="mailto:gangadharyaleholi12@gmail.com" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <button class="email-copy-btn" id="emailCopyBtn" onclick="copyEmail()" title="Copy email address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span id="copyLabel">Copy Email</span>
+          </button>
           <a href="https://youtube.com/@jatayuempire" target="_blank" class="social-link">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             YouTube
@@ -187,12 +193,10 @@
         <div class="skill-icon">
           <img src="assets/aws.png" alt="AWS" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>☁️</span>'">
         </div>
-        <h3>AWS</h3>
+        <h3>AWS Cloud Platform</h3>
         <p>EC2, IAM, VPC, S3, EKS, CloudWatch, Load Balancer, Autoscaling, RDS, Lambda, SNS, Route53</p>
-        <div class="skill-level">
-          <div class="skill-bar" data-width="92"></div>
-        </div>
-        <span class="skill-pct">Expert</span>
+        <div class="skill-level"><div class="skill-bar" data-width="90"></div></div>
+        <span class="skill-pct">Advanced</span>
       </div>
 
       <div class="skill-card" data-tilt>
@@ -200,11 +204,9 @@
         <div class="skill-icon">
           <img src="assets/kubernetes.png" alt="Kubernetes" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>⎈</span>'">
         </div>
-        <h3>Kubernetes & Docker</h3>
-        <p>Docker, Docker Compose, Kubernetes, OpenShift, EKS, CAPI</p>
-        <div class="skill-level">
-          <div class="skill-bar" data-width="88"></div>
-        </div>
+        <h3>Containers & Orchestration</h3>
+        <p>Docker, Docker Compose, Kubernetes, OpenShift, Cluster API (CAPI)</p>
+        <div class="skill-level"><div class="skill-bar" data-width="88"></div></div>
         <span class="skill-pct">Advanced</span>
       </div>
 
@@ -215,9 +217,7 @@
         </div>
         <h3>CI/CD & GitOps</h3>
         <p>Jenkins, GitHub Actions, Argo CD</p>
-        <div class="skill-level">
-          <div class="skill-bar" data-width="87"></div>
-        </div>
+        <div class="skill-level"><div class="skill-bar" data-width="87"></div></div>
         <span class="skill-pct">Advanced</span>
       </div>
 
@@ -226,11 +226,9 @@
         <div class="skill-icon">
           <img src="assets/terraform.png" alt="Terraform" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=skill-emoji>🏗️</span>'">
         </div>
-        <h3>Infrastructure & Automation</h3>
+        <h3>Infrastructure Automation</h3>
         <p>Terraform, Ansible</p>
-        <div class="skill-level">
-          <div class="skill-bar" data-width="85"></div>
-        </div>
+        <div class="skill-level"><div class="skill-bar" data-width="85"></div></div>
         <span class="skill-pct">Advanced</span>
       </div>
 
@@ -239,9 +237,7 @@
         <div class="skill-icon"><span class="skill-emoji">📊</span></div>
         <h3>Monitoring & Security</h3>
         <p>CloudWatch, Trivy, SonarQube</p>
-        <div class="skill-level">
-          <div class="skill-bar" data-width="82"></div>
-        </div>
+        <div class="skill-level"><div class="skill-bar" data-width="82"></div></div>
         <span class="skill-pct">Proficient</span>
       </div>
 
@@ -252,9 +248,7 @@
         </div>
         <h3>Version Control & Scripting</h3>
         <p>Git, GitHub, Shell Scripting, Python (Basics)</p>
-        <div class="skill-level">
-          <div class="skill-bar" data-width="89"></div>
-        </div>
+        <div class="skill-level"><div class="skill-bar" data-width="86"></div></div>
         <span class="skill-pct">Advanced</span>
       </div>
 
@@ -273,15 +267,17 @@
     <div class="timeline">
       <div class="timeline-line"></div>
 
-      <!-- SAN Data Systems -->
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-date">Jun 2023 — Present</div>
         <div class="exp-card">
           <div class="exp-header">
-            <div>
-              <h3>DevOps Engineer</h3>
-              <span class="exp-company">SAN Data Systems</span>
+            <div class="exp-title-logo">
+              <img src="assets/san_data_systems_logo.jpg" alt="SAN Data Systems" class="company-logo" onerror="this.style.display='none'">
+              <div>
+                <h3>DevOps Engineer</h3>
+                <span class="exp-company">SAN Data Systems</span>
+              </div>
             </div>
             <div class="exp-badge">Full-Time</div>
           </div>
@@ -337,15 +333,17 @@
         </div>
       </div>
 
-      <!-- Intelipath Internship -->
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">Nov 2022 — March 2023</div>
+        <div class="timeline-date">Nov 2022 — Mar 2023</div>
         <div class="exp-card">
           <div class="exp-header">
-            <div>
-              <h3>AWS Solution Architect & DevOps Intern</h3>
-              <span class="exp-company">Intelipath Software Solutions</span>
+            <div class="exp-title-logo">
+              <img src="assets/intellipaat.png" alt="Intellipaat" class="company-logo" onerror="this.style.display='none'">
+              <div>
+                <h3>AWS Solution Architect &amp; DevOps Intern</h3>
+                <span class="exp-company">Intelipath Software Solutions</span>
+              </div>
             </div>
             <div class="exp-badge intern">Internship</div>
           </div>
@@ -367,7 +365,7 @@
             <div class="achievement">
               <div class="ach-icon">📊</div>
               <div>
-                <strong>Monitoring & Alerts</strong>
+                <strong>Monitoring &amp; Alerts</strong>
                 <p>Configured Amazon CloudWatch monitoring and alerts to improve infrastructure visibility and troubleshooting efficiency.</p>
               </div>
             </div>
@@ -398,38 +396,202 @@
       <h2 class="section-title">Key Projects</h2>
     </div>
 
-    <div class="projects-grid reveal">
+    <div class="projects-list">
 
-      <div class="project-card">
-        <div class="project-num">01</div>
+      <!-- PROJECT 01 -->
+      <div class="project-card card-visible">
         <div class="project-glow"></div>
-        <div class="project-icon">🔁</div>
-        <h3>Jenkins CI/CD Automation & GitOps Platform</h3>
-        <p>Built automated CI/CD pipelines using Jenkins, GitHub Actions, Docker, and Kubernetes for streamlined application deployment. Implemented GitOps-based deployments using Argo CD on Amazon EKS to improve deployment traceability and rollback management. Integrated Trivy and SonarQube for automated vulnerability scanning and code quality checks.</p>
+        <div class="proj-meta">
+          <span class="proj-num-badge">01</span>
+          <div class="proj-title-block">
+            <div class="project-icon-inline">🔁</div>
+            <h3>Jenkins CI/CD Automation &amp; GitOps Platform</h3>
+          </div>
+        </div>
+        <p class="proj-desc">Built end-to-end CI/CD pipelines using Jenkins and GitHub Actions with Argo CD GitOps on Amazon EKS. Integrated Trivy and SonarQube for automated security scanning and code quality checks before every deployment.</p>
+
+        <!-- ARCHITECTURE DIAGRAM 1 -->
+        <div class="arch-diagram" id="arch1">
+          <div class="arch-title">Pipeline Architecture</div>
+          <div class="pipeline-flow">
+            <div class="pipe-node" data-delay="0">
+              <div class="pipe-icon"><img src="assets/github.png" alt="GitHub" onerror="this.parentElement.innerHTML='💻'"></div>
+              <span>GitHub Push</span>
+            </div>
+            <div class="pipe-arrow" data-delay="0.3"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node" data-delay="0.6">
+              <div class="pipe-icon"><img src="assets/jenkins.png" alt="Jenkins" onerror="this.parentElement.innerHTML='⚙️'"></div>
+              <span>Jenkins</span>
+            </div>
+            <div class="pipe-arrow" data-delay="0.9"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node security" data-delay="1.2">
+              <div class="pipe-icon"><img src="assets/trivy.png" alt="Trivy" onerror="this.parentElement.innerHTML='🔍'"></div>
+              <span>Trivy Scan</span>
+            </div>
+            <div class="pipe-arrow" data-delay="1.5"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node security" data-delay="1.8">
+              <div class="pipe-icon">📊</div>
+              <span>SonarQube</span>
+            </div>
+            <div class="pipe-arrow" data-delay="2.1"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node" data-delay="2.4">
+              <div class="pipe-icon">🐳</div>
+              <span>Docker Build</span>
+            </div>
+            <div class="pipe-arrow" data-delay="2.7"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node" data-delay="3.0">
+              <div class="pipe-icon"><img src="assets/docker.png" alt="Docker" onerror="this.parentElement.innerHTML='🐳'"></div>
+              <span>Docker Push</span>
+            </div>
+            <div class="pipe-arrow" data-delay="3.3"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node manifest-node" data-delay="3.6">
+              <div class="pipe-icon">📝</div>
+              <span>Update Manifest<br><em>Image Tag</em></span>
+            </div>
+          </div>
+          <div class="pipeline-row2">
+            <div class="manifest-note">⤷ Manifest repo updated with new image tag → Argo CD detects change → auto-deploys</div>
+            <div class="gitops-flow">
+              <div class="gitops-label">GitOps Deployment</div>
+              <div class="pipe-node gitops-node" data-delay="3.3">
+                <div class="pipe-icon"><img src="assets/argocd.png" alt="ArgoCD" onerror="this.parentElement.innerHTML='🔄'"></div>
+                <span>Argo CD</span>
+              </div>
+              <div class="pipe-arrow gitops-arrow" data-delay="3.6"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+              <div class="pipe-node deploy-node" data-delay="3.9">
+                <div class="pipe-icon"><img src="assets/kubernetes.png" alt="K8s" onerror="this.parentElement.innerHTML='☸️'"></div>
+                <span>EKS Production</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="project-tags">
           <span>Jenkins</span><span>GitHub Actions</span><span>Argo CD</span>
           <span>Docker</span><span>Kubernetes</span><span>Trivy</span><span>SonarQube</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-num">02</div>
+      <!-- PROJECT 02 -->
+      <div class="project-card card-visible">
         <div class="project-glow"></div>
-        <div class="project-icon">☸️</div>
-        <h3>Kubernetes Multi-Cloud Management Platform</h3>
-        <p>Managed Kubernetes clusters across Amazon Web Services, Microsoft Azure, Google Cloud, and VMware using Cluster API (CAPI). Improved cluster reliability through centralized lifecycle management and Kubernetes resource optimization. Performed troubleshooting and operational management for containerized workloads.</p>
+        <div class="proj-meta">
+          <span class="proj-num-badge">02</span>
+          <div class="proj-title-block">
+            <div class="project-icon-inline">☸️</div>
+            <h3>Kubernetes Multi-Cloud Management Platform</h3>
+          </div>
+        </div>
+        <p class="proj-desc">Managed Kubernetes clusters across AWS, Azure, GCP, and VMware using Cluster API (CAPI). One management cluster provisions and controls multiple workload clusters across all platforms with centralized lifecycle management.</p>
+
+        <!-- ARCHITECTURE DIAGRAM 2 -->
+        <div class="arch-diagram" id="arch2">
+          <div class="arch-title">CAPI Multi-Cloud Architecture</div>
+          <div class="capi-layout">
+            <div class="capi-mgmt">
+              <div class="pipe-node mgmt-node" data-delay="0">
+                <div class="pipe-icon"><img src="assets/kubernetes.png" alt="K8s" onerror="this.parentElement.innerHTML='☸️'"></div>
+                <span>Management<br>Cluster</span>
+                <div class="capi-badge">CAPI</div>
+              </div>
+            </div>
+            <div class="capi-arrows">
+              <div class="capi-branch-line"></div>
+            </div>
+            <div class="capi-targets">
+              <div class="capi-target" data-delay="0.5">
+                <div class="capi-connector"></div>
+                <div class="pipe-node target-node aws-node">
+                  <div class="pipe-icon">☁️</div>
+                  <span>AWS EKS</span>
+                </div>
+              </div>
+              <div class="capi-target" data-delay="0.8">
+                <div class="capi-connector"></div>
+                <div class="pipe-node target-node azure-node">
+                  <div class="pipe-icon">🔷</div>
+                  <span>Azure AKS</span>
+                </div>
+              </div>
+              <div class="capi-target" data-delay="1.1">
+                <div class="capi-connector"></div>
+                <div class="pipe-node target-node gcp-node">
+                  <div class="pipe-icon">🌐</div>
+                  <span>GCP GKE</span>
+                </div>
+              </div>
+              <div class="capi-target" data-delay="1.4">
+                <div class="capi-connector"></div>
+                <div class="pipe-node target-node vmware-node">
+                  <div class="pipe-icon">🖥️</div>
+                  <span>VMware</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arch-note">Each workload cluster runs independent containerized applications with centralized lifecycle management</div>
+        </div>
+
         <div class="project-tags">
           <span>Kubernetes</span><span>CAPI</span><span>AWS</span>
           <span>Azure</span><span>GCP</span><span>VMware</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-num">03</div>
+      <!-- PROJECT 03 -->
+      <div class="project-card card-visible">
         <div class="project-glow"></div>
-        <div class="project-icon">🔴</div>
-        <h3>3-Tier Application Deployment on OpenShift</h3>
-        <p>Deployed a secure 3-tier application architecture with frontend, backend, and PostgreSQL services on Red Hat OpenShift. Configured scaling, route exposure, and Kubernetes resource management for improved application availability.</p>
+        <div class="proj-meta">
+          <span class="proj-num-badge">03</span>
+          <div class="proj-title-block">
+            <div class="project-icon-inline">🔴</div>
+            <h3>3-Tier Application Deployment on OpenShift</h3>
+          </div>
+        </div>
+        <p class="proj-desc">Deployed a secure 3-tier application architecture with frontend, backend, and PostgreSQL database on Red Hat OpenShift. Configured scaling, route exposure, and Kubernetes resource management for production availability.</p>
+
+        <!-- ARCHITECTURE DIAGRAM 3 -->
+        <div class="arch-diagram" id="arch3">
+          <div class="arch-title">3-Tier OpenShift Architecture</div>
+          <div class="openshift-layout">
+            <div class="os-platform-label">
+              <img src="assets/openshift.png" alt="OpenShift" onerror="this.parentElement.innerHTML='🔴 Red Hat OpenShift'" style="height:20px;display:inline;margin-right:8px;">
+              Red Hat OpenShift Platform
+            </div>
+            <div class="os-tiers">
+              <div class="os-tier" data-delay="0">
+                <div class="tier-icon">🌐</div>
+                <div class="tier-label">Tier 1</div>
+                <div class="tier-name">Frontend</div>
+                <div class="tier-detail">Route Exposed<br>Load Balanced</div>
+                <div class="tier-pod"><div class="pod-dot"></div><div class="pod-dot"></div></div>
+              </div>
+              <div class="os-tier-arrow" data-delay="0.4">
+                <div class="tier-arrow-line"><div class="arrow-pulse"></div></div>
+                <span>API</span>
+              </div>
+              <div class="os-tier" data-delay="0.8">
+                <div class="tier-icon">⚙️</div>
+                <div class="tier-label">Tier 2</div>
+                <div class="tier-name">Backend</div>
+                <div class="tier-detail">Auto-Scaled<br>ResourceQuota</div>
+                <div class="tier-pod"><div class="pod-dot"></div><div class="pod-dot"></div><div class="pod-dot"></div></div>
+              </div>
+              <div class="os-tier-arrow" data-delay="1.2">
+                <div class="tier-arrow-line"><div class="arrow-pulse"></div></div>
+                <span>SQL</span>
+              </div>
+              <div class="os-tier" data-delay="1.6">
+                <div class="tier-icon">🗄️</div>
+                <div class="tier-label">Tier 3</div>
+                <div class="tier-name">PostgreSQL</div>
+                <div class="tier-detail">Persistent Vol<br>StatefulSet</div>
+                <div class="tier-pod"><div class="pod-dot"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="project-tags">
           <span>OpenShift</span><span>PostgreSQL</span><span>Kubernetes</span>
           <span>Red Hat</span><span>Scaling</span>
@@ -452,34 +614,47 @@
 
     <div class="music-layout reveal">
       <div class="music-info">
-        <div class="music-artist-name">
-          <span class="artist-label">Artist Name</span>
-          <h3>Gangadhar I Eleholi</h3>
+        <div class="music-channel-header">
+          <img src="assets/youtubechannel_image.jpg" alt="Jatayu Music Empire" class="channel-avatar" onerror="this.style.display='none'">
+          <div>
+            <span class="artist-label">YouTube Channel</span>
+            <h3 class="channel-name">Jatayu Music Empire</h3>
+          </div>
         </div>
-        <p>
-          I compose cinematic, electronic, and experimental music using Ableton Live —
-          applying the same systematic thinking from infrastructure engineering to sonic design.
-          Every track is a pipeline, every sound a carefully orchestrated component.
-        </p>
-        <div class="music-genre-tags">
-          <span>🎬 Cinematic</span>
-          <span>🎛️ Electronic</span>
-          <span>🌊 Experimental</span>
-          <span>🎹 Ableton Live</span>
+        <p class="channel-tagline">"Epic cinematic music, melodic soundscapes, and powerful beats crafted in Ableton Live — taking you on an immersive sonic journey."</p>
+        <div class="channel-elements">
+          <div class="channel-el">
+            <span class="el-icon">⚔️</span>
+            <div><strong>Epic Battle Music</strong><span>Intense orchestral compositions for action and fantasy</span></div>
+          </div>
+          <div class="channel-el">
+            <span class="el-icon">🎵</span>
+            <div><strong>Melody & Emotional</strong><span>Uplifting and deep soundscapes</span></div>
+          </div>
+          <div class="channel-el">
+            <span class="el-icon">🎤</span>
+            <div><strong>Trap Beats & Indian Fusion</strong><span>Hard-hitting rhythms with a unique twist</span></div>
+          </div>
+          <div class="channel-el">
+            <span class="el-icon">🤖</span>
+            <div><strong>AI-Generated Visuals</strong><span>Stunning animations complementing every track</span></div>
+          </div>
+        </div>
+        <div class="music-artist-also">
+          <span class="artist-label">Also on Spotify as</span>
+          <span class="artist-aka">Gangadhar I Eleholi</span>
         </div>
         <div class="music-links">
-          <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="music-btn spotify">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            Listen on Spotify
-          </a>
           <a href="https://youtube.com/@jatayuempire" target="_blank" class="music-btn youtube">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             Watch on YouTube
           </a>
+          <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="music-btn spotify">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Listen on Spotify
+          </a>
         </div>
-        <p class="music-search-tip">
-          🔍 Search <strong>"Gangadhar I Eleholi"</strong> on Google, Spotify, or any music platform
-        </p>
+        <p class="music-search-tip">🔍 Search <strong>"Gangadhar I Eleholi"</strong> on Spotify · <strong>"Jatayu Music Empire"</strong> on YouTube</p>
       </div>
 
       <div class="music-visual">
@@ -504,20 +679,62 @@
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section class="section section-alt" id="certifications">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">06 — Certifications</span>
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="cert-grid reveal">
+
+      <a href="https://lms.intellipaat.com/certificate-link/?Yz05MTExOCZ1PTE4Njk0OCZleHQ9MQ==" target="_blank" class="cert-card">
+        <div class="cert-glow"></div>
+        <div class="cert-icon-wrap">
+          <img src="assets/aws.png" alt="AWS" onerror="this.parentElement.innerHTML='☁️'" class="cert-logo">
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Amazon Web Services</div>
+          <h3 class="cert-name">AWS Solutions Architect Associate</h3>
+          <div class="cert-meta">
+            <span class="cert-badge-tag">Cloud Platform</span>
+            <span class="cert-verify">Verify Certificate ↗</span>
+          </div>
+        </div>
+        <div class="cert-shine"></div>
+      </a>
+
+      <a href="https://lms.intellipaat.com/certificate-link/?Yz01ODYzMCZ1PTE4Njk0OCZleHQ9MQ==" target="_blank" class="cert-card">
+        <div class="cert-glow"></div>
+        <div class="cert-icon-wrap">
+          <img src="assets/intellipaat.png" alt="Intellipaat" onerror="this.parentElement.innerHTML='🏆'" class="cert-logo">
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Intellipaat</div>
+          <h3 class="cert-name">DevOps Engineer</h3>
+          <div class="cert-meta">
+            <span class="cert-badge-tag">DevOps & Automation</span>
+            <span class="cert-verify">Verify Certificate ↗</span>
+          </div>
+        </div>
+        <div class="cert-shine"></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="section-inner">
     <div class="section-header reveal">
-      <span class="section-tag">06 — Contact</span>
+      <span class="section-tag">07 — Contact</span>
       <h2 class="section-title">Let's Connect</h2>
     </div>
 
     <div class="contact-grid reveal">
       <div class="contact-text">
-        <p>
-          Open to DevOps engineering opportunities, cloud consulting projects,
-          and music collaborations. Let's build something extraordinary together.
-        </p>
+        <p>Open to DevOps engineering opportunities, cloud consulting projects, and music collaborations. Let's build something extraordinary together.</p>
       </div>
       <div class="contact-cards">
         <a href="https://github.com/gangadhariy" target="_blank" class="contact-card">
@@ -534,18 +751,18 @@
           <div><h4>LinkedIn</h4><span>Connect Professionally</span></div>
           <div class="cc-arrow">→</div>
         </a>
+        <a href="mailto:gangadharyaleholi12@gmail.com" class="contact-card">
+          <div class="cc-icon email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div><h4>Email</h4><span>gangadharyaleholi12@gmail.com</span></div>
+          <div class="cc-arrow">→</div>
+        </a>
         <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="contact-card">
           <div class="cc-icon spotify">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
           </div>
           <div><h4>Spotify</h4><span>Gangadhar I Eleholi</span></div>
-          <div class="cc-arrow">→</div>
-        </a>
-        <a href="https://youtube.com/@jatayuempire" target="_blank" class="contact-card">
-          <div class="cc-icon youtube">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </div>
-          <div><h4>YouTube</h4><span>@jatayuempire</span></div>
           <div class="cc-arrow">→</div>
         </a>
       </div>
@@ -556,12 +773,29 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
+    <div class="footer-cta">
+      <a href="#hero" class="back-to-home">
+        <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        Back to Home
+      </a>
+    </div>
     <div class="footer-logo">GIY</div>
-    <p>© 2026 Gangadhar I Yaleholi — DevOps Engineer & Music Composer</p>
+    <p>© 2026 Gangadhar I Yaleholi — DevOps Engineer &amp; Music Composer</p>
     <p class="footer-sub">Built with precision. Deployed with purpose.</p>
   </div>
 </footer>
 
+<script>
+function copyEmail() {
+  navigator.clipboard.writeText('gangadharyaleholi12@gmail.com').then(() => {
+    const btn = document.getElementById('emailCopyBtn');
+    const lbl = document.getElementById('copyLabel');
+    lbl.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { lbl.textContent = 'Copy Email'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
 <script src="script.js"></script>
 </body>
 </html>
