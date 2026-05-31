@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Gangadhar I Yaleholi — DevOps Engineer & Music Composer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +74,7 @@
         <span>View My Work</span>
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      <a href="#music" class="btn btn-ghost btn-music">🎵 My Music</a>
     </div>
 
     <div class="hero-stats">
@@ -91,6 +91,11 @@
       <div class="stat">
         <div class="stat-top"><span class="stat-num" data-target="2">0</span></div>
         <span class="stat-label">Certifications</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat stat-music">
+        <div class="stat-top"><span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span></div>
+        <span class="stat-label">🎵 Spotify Releases</span>
       </div>
     </div>
   </div>
@@ -398,21 +403,167 @@
 
     <div class="projects-list">
 
-      <!-- PROJECT 01 -->
+      <!-- PROJECT 01: DAIRO -->
       <div class="project-card card-visible">
         <div class="project-glow"></div>
         <div class="proj-meta">
           <span class="proj-num-badge">01</span>
           <div class="proj-title-block">
+            <div class="project-icon-inline">🌐</div>
+            <h3>DAIRO – Multi-Cloud Infrastructure Platform</h3>
+          </div>
+        </div>
+        <p class="proj-sub">Data AI Resource Orchestration</p>
+        <div class="proj-points">
+          <div class="proj-point"><span>▸</span>Provisioned and managed multiple Kubernetes workload clusters across AWS, Azure, GCP, and VMware using Cluster API (CAPI), supporting the DAIRO platform.</div>
+          <div class="proj-point"><span>▸</span>Performed manual feature testing and API validation in collaboration with developers using internal documentation to verify platform behaviour across cluster environments.</div>
+          <div class="proj-point"><span>▸</span>Implemented Argo CD automation for cluster add/remove operations, streamlining GitOps-based cluster lifecycle management and reducing manual intervention.</div>
+          <div class="proj-point"><span>▸</span>Monitored and maintained high availability of the management cluster; troubleshot and resolved infrastructure issues to ensure uninterrupted platform operations.</div>
+          <div class="proj-point"><span>▸</span>Validated Skupper-based cross-cluster network connectivity, ensuring secure service communication across multi-cloud environments.</div>
+          <div class="proj-point"><span>▸</span>Built GitHub Actions pipelines to automate application deployments following UI feature releases, improving release velocity and consistency.</div>
+        </div>
+        <div class="arch-diagram arch-diagram-capi" id="arch1">
+          <div class="arch-title">DAIRO — CAPI Multi-Cloud Architecture</div>
+          <div class="capi-full-layout">
+
+            <!-- Management cluster + trunk line -->
+            <div class="capi-full-left">
+              <div class="pipe-node mgmt-node capi-mgmt-node" id="capiMgmt">
+                <div class="pipe-icon"><img src="assets/kubernetes.png" alt="K8s" onerror="this.parentElement.innerHTML='☸️'"></div>
+                <span>Management<br>Cluster</span>
+                <div class="capi-badge">CAPI</div>
+              </div>
+              <div class="capi-trunk"></div>
+            </div>
+
+            <!-- 4 workload clusters with animated drop burst -->
+            <div class="capi-full-center">
+              <div class="capi-row-item" data-drop-delay="0.3">
+                <div class="capi-h-line"><div class="capi-drop-ball"></div></div>
+                <div class="pipe-node target-node aws-node capi-dest"><div class="pipe-icon">☁️</div><span>AWS EKS</span></div>
+                <div class="capi-burst-ring"></div>
+              </div>
+              <div class="capi-row-item" data-drop-delay="0.9">
+                <div class="capi-h-line"><div class="capi-drop-ball"></div></div>
+                <div class="pipe-node target-node azure-node capi-dest"><div class="pipe-icon">🔷</div><span>Azure AKS</span></div>
+                <div class="capi-burst-ring"></div>
+              </div>
+              <div class="capi-row-item" data-drop-delay="1.5">
+                <div class="capi-h-line"><div class="capi-drop-ball"></div></div>
+                <div class="pipe-node target-node gcp-node capi-dest"><div class="pipe-icon">🌐</div><span>GCP GKE</span></div>
+                <div class="capi-burst-ring"></div>
+              </div>
+              <div class="capi-row-item" data-drop-delay="2.1">
+                <div class="capi-h-line"><div class="capi-drop-ball"></div></div>
+                <div class="pipe-node target-node vmware-node capi-dest"><div class="pipe-icon">🖥️</div><span>VMware</span></div>
+                <div class="capi-burst-ring"></div>
+              </div>
+            </div>
+
+            <!-- Skupper + ArgoCD -->
+            <div class="capi-full-right">
+              <div class="pipe-node gitops-node skupper-node capi-side-node" data-delay="2.5">
+                <div class="pipe-icon">🔗</div><span>Skupper<br>Mesh</span>
+              </div>
+              <div class="pipe-node gitops-node capi-side-node" data-delay="2.8">
+                <div class="pipe-icon"><img src="assets/argocd.png" alt="ArgoCD" onerror="this.parentElement.innerHTML='🔄'"></div>
+                <span>Argo CD</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="arch-note">Management cluster provisions workload clusters via CAPI · Argo CD manages GitOps lifecycle · Skupper enables secure cross-cluster service mesh</div>
+        </div>
+        <div class="project-tags">
+          <span>Kubernetes</span><span>CAPI</span><span>Argo CD</span><span>GitHub Actions</span>
+          <span>AWS</span><span>Azure</span><span>GCP</span><span>VMware</span><span>Skupper</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 02: OPENSHIFT 3-TIER -->
+      <div class="project-card card-visible">
+        <div class="project-glow"></div>
+        <div class="proj-meta">
+          <span class="proj-num-badge">02</span>
+          <div class="proj-title-block">
+            <div class="project-icon-inline">🔴</div>
+            <h3>3-Tier Application Deployment on OpenShift</h3>
+          </div>
+        </div>
+        <div class="proj-points">
+          <div class="proj-point"><span>▸</span>Deployed a secure 3-tier architecture with frontend, backend, and PostgreSQL services on Red Hat OpenShift.</div>
+          <div class="proj-point"><span>▸</span>Configured scaling, route exposure, and Kubernetes resource management for improved application availability.</div>
+          <div class="proj-point"><span>▸</span>Built and managed OpenShift Pipelines (Tekton) for automated build and deployment workflows within the OpenShift environment.</div>
+        </div>
+        <div class="arch-diagram" id="arch2">
+          <div class="arch-title">3-Tier OpenShift + Tekton Architecture</div>
+          <div class="openshift-layout">
+            <div class="os-platform-label">
+              <img src="assets/openshift.png" alt="OpenShift" onerror="this.style.display='none'" style="height:20px;display:inline;margin-right:8px;">
+              Red Hat OpenShift Platform
+            </div>
+            <div class="tekton-row">
+              <div class="pipe-node tekton-node" data-delay="0">
+                <div class="pipe-icon">🔧</div><span>Tekton<br>Pipeline</span>
+              </div>
+              <div class="pipe-arrow" data-delay="0.3"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+              <div class="pipe-node" data-delay="0.6"><div class="pipe-icon">🐳</div><span>Build &<br>Push</span></div>
+              <div class="pipe-arrow" data-delay="0.9"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+              <div class="pipe-node deploy-node" data-delay="1.2"><div class="pipe-icon">🚀</div><span>Deploy</span></div>
+            </div>
+            <div class="os-tiers" style="margin-top:16px">
+              <div class="os-tier" data-delay="1.4">
+                <div class="tier-icon">🌐</div>
+                <div class="tier-label">Tier 1</div>
+                <div class="tier-name">Frontend</div>
+                <div class="tier-detail">Route Exposed<br>Load Balanced</div>
+                <div class="tier-pod"><div class="pod-dot"></div><div class="pod-dot"></div></div>
+              </div>
+              <div class="os-tier-arrow" data-delay="1.6">
+                <div class="tier-arrow-line"><div class="arrow-pulse"></div></div><span>API</span>
+              </div>
+              <div class="os-tier" data-delay="1.8">
+                <div class="tier-icon">⚙️</div>
+                <div class="tier-label">Tier 2</div>
+                <div class="tier-name">Backend</div>
+                <div class="tier-detail">Auto-Scaled<br>ResourceQuota</div>
+                <div class="tier-pod"><div class="pod-dot"></div><div class="pod-dot"></div><div class="pod-dot"></div></div>
+              </div>
+              <div class="os-tier-arrow" data-delay="2.0">
+                <div class="tier-arrow-line"><div class="arrow-pulse"></div></div><span>SQL</span>
+              </div>
+              <div class="os-tier" data-delay="2.2">
+                <div class="tier-icon">🗄️</div>
+                <div class="tier-label">Tier 3</div>
+                <div class="tier-name">PostgreSQL</div>
+                <div class="tier-detail">Persistent Vol<br>StatefulSet</div>
+                <div class="tier-pod"><div class="pod-dot"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span>OpenShift</span><span>Tekton</span><span>PostgreSQL</span><span>Kubernetes</span><span>Red Hat</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 03: JENKINS CICD -->
+      <div class="project-card card-visible">
+        <div class="project-glow"></div>
+        <div class="proj-meta">
+          <span class="proj-num-badge">03</span>
+          <div class="proj-title-block">
             <div class="project-icon-inline">🔁</div>
             <h3>Jenkins CI/CD Automation &amp; GitOps Platform</h3>
           </div>
         </div>
-        <p class="proj-desc">Built end-to-end CI/CD pipelines using Jenkins and GitHub Actions with Argo CD GitOps on Amazon EKS. Integrated Trivy and SonarQube for automated security scanning and code quality checks before every deployment.</p>
-
-        <!-- ARCHITECTURE DIAGRAM 1 -->
-        <div class="arch-diagram" id="arch1">
-          <div class="arch-title">Pipeline Architecture</div>
+        <div class="proj-points">
+          <div class="proj-point"><span>▸</span>Built automated CI/CD pipelines using Jenkins, GitHub Actions, Docker, and Kubernetes for streamlined application deployment.</div>
+          <div class="proj-point"><span>▸</span>Implemented GitOps-based deployments using Argo CD on Amazon EKS to improve deployment traceability and rollback management.</div>
+          <div class="proj-point"><span>▸</span>Integrated Trivy and SonarQube for automated vulnerability scanning and code quality checks before every deployment.</div>
+        </div>
+        <div class="arch-diagram" id="arch3">
+          <div class="arch-title">CI/CD Pipeline Architecture</div>
           <div class="pipeline-flow">
             <div class="pipe-node" data-delay="0">
               <div class="pipe-icon"><img src="assets/github.png" alt="GitHub" onerror="this.parentElement.innerHTML='💻'"></div>
@@ -430,27 +581,21 @@
             </div>
             <div class="pipe-arrow" data-delay="1.5"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
             <div class="pipe-node security" data-delay="1.8">
-              <div class="pipe-icon">📊</div>
-              <span>SonarQube</span>
+              <div class="pipe-icon">📊</div><span>SonarQube</span>
             </div>
             <div class="pipe-arrow" data-delay="2.1"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
             <div class="pipe-node" data-delay="2.4">
-              <div class="pipe-icon">🐳</div>
-              <span>Docker Build</span>
+              <div class="pipe-icon"><img src="assets/docker.png" alt="Docker" onerror="this.parentElement.innerHTML='🐳'"></div>
+              <span>Docker Build<br>&amp; Push</span>
             </div>
             <div class="pipe-arrow" data-delay="2.7"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
-            <div class="pipe-node" data-delay="3.0">
-              <div class="pipe-icon"><img src="assets/docker.png" alt="Docker" onerror="this.parentElement.innerHTML='🐳'"></div>
-              <span>Docker Push</span>
-            </div>
-            <div class="pipe-arrow" data-delay="3.3"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
-            <div class="pipe-node manifest-node" data-delay="3.6">
+            <div class="pipe-node manifest-node" data-delay="3.0">
               <div class="pipe-icon">📝</div>
-              <span>Update Manifest<br><em>Image Tag</em></span>
+              <span>Update<br>Manifest</span>
             </div>
           </div>
           <div class="pipeline-row2">
-            <div class="manifest-note">⤷ Manifest repo updated with new image tag → Argo CD detects change → auto-deploys</div>
+            <div class="manifest-note">⤷ Manifest repo updated with new image tag → Argo CD detects drift → auto-deploys to EKS</div>
             <div class="gitops-flow">
               <div class="gitops-label">GitOps Deployment</div>
               <div class="pipe-node gitops-node" data-delay="3.3">
@@ -465,136 +610,52 @@
             </div>
           </div>
         </div>
-
         <div class="project-tags">
           <span>Jenkins</span><span>GitHub Actions</span><span>Argo CD</span>
           <span>Docker</span><span>Kubernetes</span><span>Trivy</span><span>SonarQube</span>
         </div>
       </div>
 
-      <!-- PROJECT 02 -->
+      <!-- PROJECT 04: AWS LAMBDA EBS SNAPSHOTS -->
       <div class="project-card card-visible">
         <div class="project-glow"></div>
         <div class="proj-meta">
-          <span class="proj-num-badge">02</span>
+          <span class="proj-num-badge">04</span>
           <div class="proj-title-block">
-            <div class="project-icon-inline">☸️</div>
-            <h3>Kubernetes Multi-Cloud Management Platform</h3>
+            <div class="project-icon-inline">⚡</div>
+            <h3>AWS Lambda — Automated EBS Backup &amp; IaC Management</h3>
           </div>
         </div>
-        <p class="proj-desc">Managed Kubernetes clusters across AWS, Azure, GCP, and VMware using Cluster API (CAPI). One management cluster provisions and controls multiple workload clusters across all platforms with centralized lifecycle management.</p>
-
-        <!-- ARCHITECTURE DIAGRAM 2 -->
-        <div class="arch-diagram" id="arch2">
-          <div class="arch-title">CAPI Multi-Cloud Architecture</div>
-          <div class="capi-layout">
-            <div class="capi-mgmt">
-              <div class="pipe-node mgmt-node" data-delay="0">
-                <div class="pipe-icon"><img src="assets/kubernetes.png" alt="K8s" onerror="this.parentElement.innerHTML='☸️'"></div>
-                <span>Management<br>Cluster</span>
-                <div class="capi-badge">CAPI</div>
-              </div>
+        <div class="proj-points">
+          <div class="proj-point"><span>▸</span>Automated weekly EBS snapshot backups using AWS Lambda for instances tagged <code>Name=Dairo</code>, ensuring reliable data recovery and compliance.</div>
+          <div class="proj-point"><span>▸</span>Provisioned and managed cloud infrastructure using Terraform by picking up tickets assigned by the manager, ensuring consistent and repeatable environment setups.</div>
+        </div>
+        <div class="arch-diagram" id="arch4">
+          <div class="arch-title">Lambda Backup Automation Architecture</div>
+          <div class="pipeline-flow">
+            <div class="pipe-node" data-delay="0">
+              <div class="pipe-icon">⏰</div><span>EventBridge<br>Weekly Trigger</span>
             </div>
-            <div class="capi-arrows">
-              <div class="capi-branch-line"></div>
+            <div class="pipe-arrow" data-delay="0.4"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node manifest-node" data-delay="0.8">
+              <div class="pipe-icon">⚡</div><span>AWS Lambda<br>Function</span>
             </div>
-            <div class="capi-targets">
-              <div class="capi-target" data-delay="0.5">
-                <div class="capi-connector"></div>
-                <div class="pipe-node target-node aws-node">
-                  <div class="pipe-icon">☁️</div>
-                  <span>AWS EKS</span>
-                </div>
-              </div>
-              <div class="capi-target" data-delay="0.8">
-                <div class="capi-connector"></div>
-                <div class="pipe-node target-node azure-node">
-                  <div class="pipe-icon">🔷</div>
-                  <span>Azure AKS</span>
-                </div>
-              </div>
-              <div class="capi-target" data-delay="1.1">
-                <div class="capi-connector"></div>
-                <div class="pipe-node target-node gcp-node">
-                  <div class="pipe-icon">🌐</div>
-                  <span>GCP GKE</span>
-                </div>
-              </div>
-              <div class="capi-target" data-delay="1.4">
-                <div class="capi-connector"></div>
-                <div class="pipe-node target-node vmware-node">
-                  <div class="pipe-icon">🖥️</div>
-                  <span>VMware</span>
-                </div>
-              </div>
+            <div class="pipe-arrow" data-delay="1.2"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node security" data-delay="1.6">
+              <div class="pipe-icon">🏷️</div><span>Filter<br>Name=Dairo</span>
+            </div>
+            <div class="pipe-arrow" data-delay="2.0"><div class="arrow-line"><div class="arrow-pulse"></div></div><div class="arrow-head">▶</div></div>
+            <div class="pipe-node deploy-node" data-delay="2.4">
+              <div class="pipe-icon">💾</div><span>AMI & EBS Snapshot<br>Created</span>
             </div>
           </div>
-          <div class="arch-note">Each workload cluster runs independent containerized applications with centralized lifecycle management</div>
+          <div class="pipeline-row2">
+            <div class="manifest-note">⤷ Terraform provisions EC2, IAM roles, and Lambda function · Manager tickets tracked and applied via IaC</div>
+          </div>
         </div>
-
         <div class="project-tags">
-          <span>Kubernetes</span><span>CAPI</span><span>AWS</span>
-          <span>Azure</span><span>GCP</span><span>VMware</span>
-        </div>
-      </div>
-
-      <!-- PROJECT 03 -->
-      <div class="project-card card-visible">
-        <div class="project-glow"></div>
-        <div class="proj-meta">
-          <span class="proj-num-badge">03</span>
-          <div class="proj-title-block">
-            <div class="project-icon-inline">🔴</div>
-            <h3>3-Tier Application Deployment on OpenShift</h3>
-          </div>
-        </div>
-        <p class="proj-desc">Deployed a secure 3-tier application architecture with frontend, backend, and PostgreSQL database on Red Hat OpenShift. Configured scaling, route exposure, and Kubernetes resource management for production availability.</p>
-
-        <!-- ARCHITECTURE DIAGRAM 3 -->
-        <div class="arch-diagram" id="arch3">
-          <div class="arch-title">3-Tier OpenShift Architecture</div>
-          <div class="openshift-layout">
-            <div class="os-platform-label">
-              <img src="assets/openshift.png" alt="OpenShift" onerror="this.parentElement.innerHTML='🔴 Red Hat OpenShift'" style="height:20px;display:inline;margin-right:8px;">
-              Red Hat OpenShift Platform
-            </div>
-            <div class="os-tiers">
-              <div class="os-tier" data-delay="0">
-                <div class="tier-icon">🌐</div>
-                <div class="tier-label">Tier 1</div>
-                <div class="tier-name">Frontend</div>
-                <div class="tier-detail">Route Exposed<br>Load Balanced</div>
-                <div class="tier-pod"><div class="pod-dot"></div><div class="pod-dot"></div></div>
-              </div>
-              <div class="os-tier-arrow" data-delay="0.4">
-                <div class="tier-arrow-line"><div class="arrow-pulse"></div></div>
-                <span>API</span>
-              </div>
-              <div class="os-tier" data-delay="0.8">
-                <div class="tier-icon">⚙️</div>
-                <div class="tier-label">Tier 2</div>
-                <div class="tier-name">Backend</div>
-                <div class="tier-detail">Auto-Scaled<br>ResourceQuota</div>
-                <div class="tier-pod"><div class="pod-dot"></div><div class="pod-dot"></div><div class="pod-dot"></div></div>
-              </div>
-              <div class="os-tier-arrow" data-delay="1.2">
-                <div class="tier-arrow-line"><div class="arrow-pulse"></div></div>
-                <span>SQL</span>
-              </div>
-              <div class="os-tier" data-delay="1.6">
-                <div class="tier-icon">🗄️</div>
-                <div class="tier-label">Tier 3</div>
-                <div class="tier-name">PostgreSQL</div>
-                <div class="tier-detail">Persistent Vol<br>StatefulSet</div>
-                <div class="tier-pod"><div class="pod-dot"></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-tags">
-          <span>OpenShift</span><span>PostgreSQL</span><span>Kubernetes</span>
-          <span>Red Hat</span><span>Scaling</span>
+          <span>AWS Lambda</span><span>EventBridge</span><span>AMI & EBS Snapshots</span>
+          <span>Terraform</span><span>IAM</span><span>AWS EC2</span>
         </div>
       </div>
 
@@ -612,68 +673,84 @@
       <h2 class="section-title">Sound Architecture</h2>
     </div>
 
-    <div class="music-layout reveal">
-      <div class="music-info">
-        <div class="music-channel-header">
-          <img src="assets/youtubechannel_image.jpg" alt="Jatayu Music Empire" class="channel-avatar" onerror="this.style.display='none'">
-          <div>
-            <span class="artist-label">YouTube Channel</span>
-            <h3 class="channel-name">Jatayu Music Empire</h3>
+    <div class="music-stacked reveal">
+
+      <!-- TOP: Channel Info full width -->
+      <div class="music-top-row">
+        <div class="music-info-block">
+          <div class="music-channel-header">
+            <img src="assets/youtube-profile.jpg" alt="Jatayu Music Empire" class="channel-avatar" onerror="this.style.display='none'">
+            <div>
+              <span class="artist-label">YouTube Channel</span>
+              <h3 class="channel-name">Jatayu Music Empire</h3>
+            </div>
           </div>
+          <p class="channel-tagline">"Epic cinematic music, melodic soundscapes, and powerful beats crafted in Ableton Live — taking you on an immersive sonic journey."</p>
+          <div class="channel-elements-grid">
+            <div class="channel-el"><span class="el-icon">⚔️</span><div><strong>Epic Battle Music</strong><span>Intense orchestral for action &amp; fantasy</span></div></div>
+            <div class="channel-el"><span class="el-icon">🎵</span><div><strong>Melody &amp; Emotional</strong><span>Uplifting and deep soundscapes</span></div></div>
+            <div class="channel-el"><span class="el-icon">🎤</span><div><strong>Trap Beats &amp; Indian Fusion</strong><span>Hard-hitting rhythms with a unique twist</span></div></div>
+            <div class="channel-el"><span class="el-icon">🤖</span><div><strong>AI-Generated Visuals</strong><span>Stunning animations per track</span></div></div>
+          </div>
+          <div class="music-artist-also">
+            <span class="artist-label">Also on Spotify as</span>
+            <span class="artist-aka">Gangadhar I Eleholi</span>
+          </div>
+          <div class="music-links">
+            <a href="https://youtube.com/@jatayuempire" target="_blank" class="music-btn youtube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch on YouTube
+            </a>
+            <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="music-btn spotify">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+              Listen on Spotify
+            </a>
+          </div>
+          <p class="music-search-tip">🔍 Search <strong>"Gangadhar I Eleholi"</strong> on Spotify · <strong>"Jatayu Music Empire"</strong> on YouTube</p>
         </div>
-        <p class="channel-tagline">"Epic cinematic music, melodic soundscapes, and powerful beats crafted in Ableton Live — taking you on an immersive sonic journey."</p>
-        <div class="channel-elements">
-          <div class="channel-el">
-            <span class="el-icon">⚔️</span>
-            <div><strong>Epic Battle Music</strong><span>Intense orchestral compositions for action and fantasy</span></div>
-          </div>
-          <div class="channel-el">
-            <span class="el-icon">🎵</span>
-            <div><strong>Melody & Emotional</strong><span>Uplifting and deep soundscapes</span></div>
-          </div>
-          <div class="channel-el">
-            <span class="el-icon">🎤</span>
-            <div><strong>Trap Beats & Indian Fusion</strong><span>Hard-hitting rhythms with a unique twist</span></div>
-          </div>
-          <div class="channel-el">
-            <span class="el-icon">🤖</span>
-            <div><strong>AI-Generated Visuals</strong><span>Stunning animations complementing every track</span></div>
-          </div>
-        </div>
-        <div class="music-artist-also">
-          <span class="artist-label">Also on Spotify as</span>
-          <span class="artist-aka">Gangadhar I Eleholi</span>
-        </div>
-        <div class="music-links">
-          <a href="https://youtube.com/@jatayuempire" target="_blank" class="music-btn youtube">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            Watch on YouTube
-          </a>
-          <a href="https://open.spotify.com/artist/0Qsk9DvcvyFjvXnIAM5vdE" target="_blank" class="music-btn spotify">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            Listen on Spotify
-          </a>
-        </div>
-        <p class="music-search-tip">🔍 Search <strong>"Gangadhar I Eleholi"</strong> on Spotify · <strong>"Jatayu Music Empire"</strong> on YouTube</p>
       </div>
 
-      <div class="music-visual">
-        <div class="equalizer">
-          <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-          <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-          <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-          <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-        </div>
-        <div class="vinyl">
-          <div class="vinyl-inner">
-            <div class="vinyl-center">🎵</div>
+      <!-- BOTTOM: Vinyl animation LEFT + Spotify tracks RIGHT in alternating grid -->
+      <div class="music-bottom-row">
+
+        <!-- Vinyl visual -->
+        <div class="music-vinyl-col">
+          <div class="equalizer">
+            <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+            <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+            <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+            <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+          </div>
+          <div class="vinyl">
+            <div class="vinyl-inner"><div class="vinyl-center">🎵</div></div>
+          </div>
+          <div class="waveform">
+            <svg viewBox="0 0 300 60" preserveAspectRatio="none">
+              <polyline points="0,30 10,15 20,40 30,10 40,45 50,20 60,35 70,5 80,50 90,25 100,38 110,12 120,42 130,18 140,30 150,8 160,48 170,22 180,35 190,15 200,45 210,28 220,12 230,40 240,20 250,38 260,10 270,45 280,25 290,35 300,30"/>
+            </svg>
           </div>
         </div>
-        <div class="waveform">
-          <svg viewBox="0 0 300 60" preserveAspectRatio="none">
-            <polyline points="0,30 10,15 20,40 30,10 40,45 50,20 60,35 70,5 80,50 90,25 100,38 110,12 120,42 130,18 140,30 150,8 160,48 170,22 180,35 190,15 200,45 210,28 220,12 230,40 240,20 250,38 260,10 270,45 280,25 290,35 300,30"/>
-          </svg>
+
+        <!-- Spotify tracks alternating grid -->
+        <div class="music-tracks-col">
+          <div class="spotify-panel-header">
+            <div class="sp-eq"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
+            <span>Listen Now — Spotify</span>
+          </div>
+          <div class="tracks-alt-grid">
+            <div class="track-right"><iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/4gZvhVNgsUrPdjtsUg814M?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div class="track-left"><iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/64fm61AhRfxYVFjXPV67Ge?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div class="track-right"><iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/6CjpVfnbtgw9Ed64STPlk2?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div class="track-left"><iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/0AjpEzH2jhjO4xzi3OU4GJ?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div class="track-right"><iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/02OOREX7gzkw41dCy1Sf1F?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div class="track-left"><iframe style="border-radius:10px" src="https://open.spotify.com/embed/track/1YkLs3P1zDhmVpsG0fBJ0f?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+          </div>
+          <div class="track-center">
+            <div class="spotify-playlist-label">🎧 Full Playlist</div>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0J6mELRNBQPzfo8yFvW2vX?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -694,7 +771,7 @@
           <img src="assets/aws.png" alt="AWS" onerror="this.parentElement.innerHTML='☁️'" class="cert-logo">
         </div>
         <div class="cert-body">
-          <div class="cert-issuer">Intellipaat</div>
+          <div class="cert-issuer">Amazon Web Services</div>
           <h3 class="cert-name">AWS Solutions Architect Associate</h3>
           <div class="cert-meta">
             <span class="cert-badge-tag">Cloud Platform</span>
