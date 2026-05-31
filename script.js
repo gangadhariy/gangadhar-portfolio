@@ -356,4 +356,57 @@
   if (projList) projListObserver.observe(projList);
 
 
+  // ── CAPI DROP-BURST ANIMATION ────────────────────────────
+  function runCapiDrops() {
+    const rows = document.querySelectorAll('.capi-row-item');
+    const sideNodes = document.querySelectorAll('.capi-side-node');
+
+    rows.forEach((row, i) => {
+      const delay = parseFloat(row.dataset.dropDelay || i * 0.6) * 1000;
+
+      // 1. Fade row in
+      setTimeout(() => {
+        row.classList.add('drop-ready');
+      }, delay);
+
+      // 2. Animate the ball travelling
+      setTimeout(() => {
+        row.classList.add('drop-animate');
+      }, delay + 100);
+
+      // 3. Burst ring on arrival
+      setTimeout(() => {
+        row.classList.add('drop-burst');
+        // Reset burst so it can replay on re-entry if needed
+        setTimeout(() => row.classList.remove('drop-burst', 'drop-animate'), 600);
+      }, delay + 550);
+    });
+
+    // Side nodes appear after all drops
+    sideNodes.forEach((node, i) => {
+      const d = parseFloat(node.dataset.delay || 2.5 + i * 0.3) * 1000;
+      setTimeout(() => node.classList.add('drop-ready'), d);
+    });
+  }
+
+  const capiObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Reset all
+        entry.target.querySelectorAll('.capi-row-item').forEach(r => {
+          r.classList.remove('drop-ready','drop-animate','drop-burst');
+        });
+        entry.target.querySelectorAll('.capi-side-node').forEach(n => {
+          n.classList.remove('drop-ready');
+        });
+        setTimeout(runCapiDrops, 300);
+        capiObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const capiDiagram = document.getElementById('arch1');
+  if (capiDiagram) capiObserver.observe(capiDiagram);
+
+
 })();
